@@ -3,7 +3,7 @@ About esptool
 
 Home: https://github.com/espressif/esptool
 
-Package license: GPLv2
+Package license: GPL-2.0-or-later
 
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/esptool-feedstock/blob/master/LICENSE.txt)
 
