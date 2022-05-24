@@ -1,5 +1,5 @@
 {% set name = "esptool" %}
-{% set version = "4.0" %}
+{% set version = "4.0.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: bf6ed90864a02da70fe20132ab589e892ec0af7437df9e0bc4844afd2fc2dac0
+  sha256: feeab030fe781e43cbbd5641f23766e52e7d4665b4e221fbf6155dd3d80f0b55
 
 build:
   number: 0
