@@ -10,7 +10,7 @@ source:
   sha256: 03d00312eef258baf83faefd0b912b2251dd0440242da9dcb1b18fe75ed614c3
 
 build:
-  number: 0
+  number: 1
   script: {{ PYTHON }} -m pip install . -vv
   entry_points:
     - esptool.py = esptool:_main      # [win]
