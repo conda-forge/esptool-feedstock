@@ -25,12 +25,12 @@ requirements:
     - python
     - pip
   run:
-    - bitstring >=3.1.6,<4
+    - bitstring >=3.1.6
     - cryptography >=2.1.4
     - ecdsa >=0.16.0
     - python
     - pyserial >=3.0
-    - reedsolo >=1.5.3,<=1.5.4
+    - reedsolo >=1.5.3,<=1.6
 
 test:
   imports:
