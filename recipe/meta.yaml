@@ -1,5 +1,5 @@
 {% set name = "esptool" %}
-{% set version = "4.4" %}
+{% set version = "4.5" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 8acd4dfe70819b1302861ae92894380fb4700b377f5a4739479a4ec276e0b256
+  sha256: eb2602e6af8cb8f6f32d5046441b3a102cd48c505e4afcf836a95a4fc39002a6
 
 build:
   number: 0
@@ -25,12 +25,12 @@ requirements:
     - python
     - pip
   run:
-    - bitstring >=3.1.6,<4
+    - bitstring >=3.1.6
     - cryptography >=2.1.4
     - ecdsa >=0.16.0
     - python
     - pyserial >=3.0
-    - reedsolo >=1.5.3,<=1.5.4
+    - reedsolo >=1.5.3,<=1.6
 
 test:
   imports:
