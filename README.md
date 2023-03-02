@@ -1,11 +1,11 @@
-About esptool
-=============
+About esptool-feedstock
+=======================
+
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/esptool-feedstock/blob/main/LICENSE.txt)
 
 Home: https://github.com/espressif/esptool
 
 Package license: GPL-2.0-or-later
-
-Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/esptool-feedstock/blob/main/LICENSE.txt)
 
 Summary: A serial utility to communicate & flash code to Espressif ESP8266 & ESP32 chips.
 
