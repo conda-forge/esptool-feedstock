@@ -39,6 +39,8 @@ test:
     - esptool.py -h
     - espsecure.py -h
     - espefuse.py -h
+    # esp_rfc2217_server somehow does not work on windows altough it is added in entry_points
+    - esp_rfc2217_server.py -h  # [not win]
 
 about:
   home: https://github.com/espressif/esptool
