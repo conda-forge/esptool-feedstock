@@ -30,7 +30,8 @@ requirements:
     - ecdsa >=0.16.0
     - python
     - pyserial >=3.0
-    - reedsolo >=1.5.3,<=1.6
+    - pyyaml >=5.1
+    - reedsolo >=1.5.3,<=1.8
 
 test:
   imports:
