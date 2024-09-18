@@ -1,5 +1,5 @@
 {% set name = "esptool" %}
-{% set version = "4.7.0" %}
+{% set version = "4.8.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,10 +7,10 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 01454e69e1ef3601215db83ff2cb1fc79ece67d24b0e5d43d451b410447c4893
+  sha256: f933150b5753e7501024e4d237fe078a77913a0cb7e2f08197ef8d70306b1b53
 
 build:
-  number: 1
+  number: 0
   script: {{ PYTHON }} -m pip install . -vv
   entry_points:
     - esptool.py = esptool:_main      # [win]
@@ -24,13 +24,15 @@ requirements:
   host:
     - python
     - pip
+    - setuptools >=64
   run:
-    - bitstring >=3.1.6
+    - argcomplete >=3  # [not win]
+    - bitstring >=3.1.6,!=4.2.0
     - cryptography >=2.1.4
     - ecdsa >=0.16.0
     - intelhex
     - python
-    - pyserial >=3.0
+    - pyserial >=3.3
     - pyyaml >=5.1
     - reedsolo >=1.5.3,<=1.8
 
