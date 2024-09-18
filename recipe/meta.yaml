@@ -24,13 +24,15 @@ requirements:
   host:
     - python
     - pip
+    - setuptools >=64
   run:
-    - bitstring >=3.1.6
+    - argcomplete >=3  # [not win]
+    - bitstring >=3.1.6,!=4.2.0
     - cryptography >=2.1.4
     - ecdsa >=0.16.0
     - intelhex
     - python
-    - pyserial >=3.0
+    - pyserial >=3.3
     - pyyaml >=5.1
     - reedsolo >=1.5.3,<=1.8
 
