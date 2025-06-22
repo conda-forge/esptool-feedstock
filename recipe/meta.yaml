@@ -1,13 +1,13 @@
 {% set name = "esptool" %}
-{% set version = "4.8.1" %}
+{% set version = "4.9.0" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: dc4ef26b659e1a8dcb019147c0ea6d94980b34de99fbe09121c7941c8b254531
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  sha256: f636b4552f3873cdf94cfaf2d5c37f5407f1f33df73643efee513867310b6a8e
 
 build:
   number: 0
@@ -34,7 +34,7 @@ requirements:
     - python
     - pyserial >=3.3
     - pyyaml >=5.1
-    - reedsolo >=1.5.3,<=1.8
+    - reedsolo >=1.5.3,<1.8
 
 test:
   imports:
