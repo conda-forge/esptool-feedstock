@@ -13,9 +13,12 @@ build:
   number: 0
   script: {{ PYTHON }} -m pip install . -vv
   entry_points:
-    - esptool.py = esptool:_main      # [win]
-    - espsecure.py = espsecure:_main  # [win]
-    - espefuse.py = espefuse:_main    # [win]
+    - esptool = esptool.__init__:_main
+    - espsecure = espsecure.__init__:_main
+    - espefuse = espfuse.__init__:_main
+    - esptool.py = esptool.__init__:_main      # [win]
+    - espsecure.py = espsecure.__init__:_main  # [win]
+    - espefuse.py = espefuse.__init__:_main    # [win]
 
 requirements:
   build:
@@ -40,6 +43,9 @@ test:
   imports:
     - esptool
   commands:
+    - esptool -h
+    - espsecure -h
+    - espefuse -h
     - esptool.py -h
     - espsecure.py -h
     - espefuse.py -h
