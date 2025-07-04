@@ -1,5 +1,5 @@
 {% set name = "esptool" %}
-{% set version = "4.9.0" %}
+{% set version = "5.0.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,15 +7,21 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: f636b4552f3873cdf94cfaf2d5c37f5407f1f33df73643efee513867310b6a8e
+  sha256: cee2259c868a91c99962b557b463398d024c3610ff721ac1058cb13144686ead
 
 build:
+  skip: true  # [py<310]
   number: 0
   script: {{ PYTHON }} -m pip install . -vv
   entry_points:
-    - esptool.py = esptool:_main      # [win]
-    - espsecure.py = espsecure:_main  # [win]
-    - espefuse.py = espefuse:_main    # [win]
+    - esptool = esptool.__init__:_main
+    - espsecure = espsecure.__init__:_main
+    - espefuse = espefuse.__init__:_main
+    - esp_rfc2217_server = esp_rfc2217_server.__init__:main
+    - esptool.py = esptool.__init__:_main                       # [win]
+    - espsecure.py = espsecure.__init__:_main                   # [win]
+    - espefuse.py = espefuse.__init__:_main                     # [win]
+    - esp_rfc2217_server.py = esp_rfc2217_server.__init__:main  # [win]
 
 requirements:
   build:
@@ -26,25 +32,27 @@ requirements:
     - pip
     - setuptools >=64
   run:
-    - argcomplete >=3  # [not win]
     - bitstring >=3.1.6,!=4.2.0
-    - cryptography >=2.1.4
-    - ecdsa >=0.16.0
+    - click <8.2.0
+    - cryptography >=43.0.0
     - intelhex
     - python
     - pyserial >=3.3
     - pyyaml >=5.1
     - reedsolo >=1.5.3,<1.8
+    - rich-click
 
 test:
   imports:
     - esptool
   commands:
+    - esptool -h
+    - espsecure -h
+    - espefuse -h
     - esptool.py -h
     - espsecure.py -h
     - espefuse.py -h
-    # esp_rfc2217_server somehow does not work on windows altough it is added in entry_points
-    - esp_rfc2217_server.py -h  # [not win]
+    - esp_rfc2217_server.py -h
 
 about:
   home: https://github.com/espressif/esptool
