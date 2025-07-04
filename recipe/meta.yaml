@@ -16,7 +16,7 @@ build:
   entry_points:
     - esptool = esptool.__init__:_main
     - espsecure = espsecure.__init__:_main
-    - espefuse = espfuse.__init__:_main
+    - espefuse = espefuse.__init__:_main
     - esptool.py = esptool.__init__:_main      # [win]
     - espsecure.py = espsecure.__init__:_main  # [win]
     - espefuse.py = espefuse.__init__:_main    # [win]
