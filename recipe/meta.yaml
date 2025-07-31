@@ -1,5 +1,5 @@
 {% set name = "esptool" %}
-{% set version = "5.0.1" %}
+{% set version = "5.0.2" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 2ad7cae469e4356a2a3087c385343ade7b0c0cd68ffe5b934d9e595d74e3bac9
+  sha256: 05cc4732eb2a9a7766c9e3531f7943d76ff0ca06dc9cd308d1d3d0b72f74aac2
 
 build:
   skip: true  # [py<310]
@@ -33,7 +33,7 @@ requirements:
     - setuptools >=64
   run:
     - bitstring >=3.1.6,!=4.2.0
-    - click <8.2.0
+    - click <9
     - cryptography >=43.0.0
     - intelhex
     - python
