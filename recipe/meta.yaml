@@ -30,7 +30,7 @@ requirements:
     - argcomplete >=3  # [not win]
     - bitstring >=3.1.6,!=4.2.0
     - cryptography >=2.1.4
-    - cryptography >=2.1.4,<49.0.0 # [osx and x86_64]
+    - cryptography >=2.1.4,<49.0.0  # [osx and x86_64]
     - ecdsa >=0.16.0
     - intelhex
     - python
