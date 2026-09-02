@@ -1,13 +1,13 @@
 {% set name = "esptool" %}
-{% set version = "5.3.1" %}
+{% set version = "5.4.0" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 125781f36e6a2d08c484524a45f340694675368b5eeead9d0cb21b2034a91d98
+  url: https://files.pythonhosted.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  sha256: fd756598db0a26c9975fa18511b08687c54bf2ce7322ede80cf1f5117dad1f50
 
 build:
   skip: true  # [py<310]
