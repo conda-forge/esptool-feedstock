@@ -26,6 +26,11 @@ build:
           - esp_rfc2217_server.py = esp_rfc2217_server.__init__:main
 
 requirements:
+  build:
+    - if: build_platform != target_platform
+      then:
+        - cross-python_${{ target_platform }}
+        - python
   host:
     - pip
     - python
