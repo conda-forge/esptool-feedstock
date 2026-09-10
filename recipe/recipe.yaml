@@ -1,0 +1,74 @@
+context:
+  version: "5.4.0"
+
+package:
+  name: esptool
+  version: ${{ version }}
+
+source:
+  url: https://pypi.org/packages/source/e/esptool/esptool-${{ version }}.tar.gz
+  sha256: fd756598db0a26c9975fa18511b08687c54bf2ce7322ede80cf1f5117dad1f50
+
+build:
+  script: python -m pip install . -vv
+  number: 0
+  python:
+    entry_points:
+      - esptool = esptool.__init__:_main
+      - espsecure = espsecure.__init__:_main
+      - espefuse = espefuse.__init__:_main
+      - esp_rfc2217_server = esp_rfc2217_server.__init__:main
+      - if: win
+        then:
+          - esptool.py = esptool.__init__:_main
+          - espsecure.py = espsecure.__init__:_main
+          - espefuse.py = espefuse.__init__:_main
+          - esp_rfc2217_server.py = esp_rfc2217_server.__init__:main
+
+requirements:
+  build:
+    - if: build_platform != target_platform
+      then:
+        - cross-python_${{ target_platform }}
+        - python
+  host:
+    - pip
+    - python
+    - setuptools >=64
+  run:
+    - bitstring >=3.1.6,!=4.2.0
+    - click <9
+    - cryptography >=43.0.0
+    - esp-pylib >=1.0.0
+    - intelhex
+    - python
+    - pyserial >=3.3
+    - pyyaml >=5.1
+    - reedsolo >=1.5.3,<1.8
+    - rich-click <2
+
+tests:
+  - python:
+      imports:
+        - esptool
+      pip_check: true
+  - script:
+      - esptool -h
+      - espsecure -h
+      - espefuse -h
+      - esptool.py -h
+      - espsecure.py -h
+      - espefuse.py -h
+      - esp_rfc2217_server.py -h
+
+about:
+  homepage: https://github.com/espressif/esptool
+  summary: 'A serial utility for flashing, provisioning, and interacting with Espressif SoCs.'
+  license: GPL-2.0-or-later
+  license_file: LICENSE
+  documentation: https://docs.espressif.com/projects/esptool/
+  repository: https://github.com/espressif/esptool
+
+extra:
+  recipe-maintainers:
+    - m-rossi
