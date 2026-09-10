@@ -18,10 +18,12 @@ build:
       - espsecure = espsecure.__init__:_main
       - espefuse = espefuse.__init__:_main
       - esp_rfc2217_server = esp_rfc2217_server.__init__:main
-      - esptool.py = esptool.__init__:_main
-      - espsecure.py = espsecure.__init__:_main
-      - espefuse.py = espefuse.__init__:_main
-      - esp_rfc2217_server.py = esp_rfc2217_server.__init__:main
+      - if: win
+        then:
+          - esptool.py = esptool.__init__:_main
+          - espsecure.py = espsecure.__init__:_main
+          - espefuse.py = espefuse.__init__:_main
+          - esp_rfc2217_server.py = esp_rfc2217_server.__init__:main
 
 requirements:
   host:
