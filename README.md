@@ -7,11 +7,11 @@ Home: https://github.com/espressif/esptool
 
 Package license: GPL-2.0-or-later
 
-Summary: A serial utility to communicate & flash code to Espressif ESP8266 & ESP32 chips.
+Summary: A serial utility for flashing, provisioning, and interacting with Espressif SoCs.
 
 Development: https://github.com/espressif/esptool
 
-Documentation: https://github.com/espressif/esptool/wiki
+Documentation: https://docs.espressif.com/projects/esptool/
 
 Current build status
 ====================
