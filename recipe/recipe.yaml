@@ -1,5 +1,5 @@
 context:
-  version: "5.4.0"
+  version: "5.5.0"
 
 package:
   name: esptool
@@ -7,11 +7,11 @@ package:
 
 source:
   url: https://pypi.org/packages/source/e/esptool/esptool-${{ version }}.tar.gz
-  sha256: fd756598db0a26c9975fa18511b08687c54bf2ce7322ede80cf1f5117dad1f50
+  sha256: cfc1d1c6d1699427451af1be7335efa835b7974c61ed86d77927d9553c443d57
 
 build:
   script: python -m pip install . -vv
-  number: 1
+  number: 0
   python:
     entry_points:
       - esptool = esptool.__init__:_main
