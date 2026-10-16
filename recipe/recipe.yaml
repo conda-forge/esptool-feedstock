@@ -1,5 +1,5 @@
 context:
-  version: "5.5.0"
+  version: "5.6.0"
 
 package:
   name: esptool
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/e/esptool/esptool-${{ version }}.tar.gz
-  sha256: cfc1d1c6d1699427451af1be7335efa835b7974c61ed86d77927d9553c443d57
+  sha256: 86c7249e9cc3a824e032ede9ba20abad057a2c49e231418cc4f02b177bb36f42
 
 build:
   script: python -m pip install . -vv
@@ -34,9 +34,8 @@ requirements:
   host:
     - pip
     - python
-    - setuptools >=64
+    - setuptools >=77
   run:
-    - bitstring >=3.1.6,!=4.2.0
     - click <9
     - cryptography >=43.0.0
     - esp-pylib >=1.0.0
