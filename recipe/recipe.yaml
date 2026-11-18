@@ -35,7 +35,9 @@ requirements:
     - pip
     - python
     - setuptools >=77
-    - ${{ stdlib('c') }}  # [unix]
+    - if: unix
+      then:
+        - ${{ stdlib('c') }}
   run:
     - click <9
     - cryptography >=43.0.0
