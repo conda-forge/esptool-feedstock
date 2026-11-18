@@ -35,6 +35,9 @@ requirements:
     - pip
     - python
     - setuptools >=77
+    - if: unix
+      then:
+        - ${{ stdlib('c') }}
   run:
     - click <9
     - cryptography >=43.0.0
@@ -71,3 +74,4 @@ about:
 extra:
   recipe-maintainers:
     - m-rossi
+    - swastiktawate
