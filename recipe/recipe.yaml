@@ -32,6 +32,9 @@ requirements:
         - cross-python_${{ target_platform }}
         - python
   host:
+    - if: osx
+      then:
+        - ${{ stdlib('c') }}
     - pip
     - python
     - setuptools >=77
